@@ -1,10 +1,10 @@
 "use strict";
 //string
-var nome = "lucas";
+let nome = "lucas";
 console.log("nome", nome);
 // nome= 12; //errro
 //tuplas
-var endereco = [['Avenida', 'teste'], [99, 100]];
+let endereco = [['Avenida', 'teste'], [99, 100]];
 console.log(endereco);
 //enums
 var Cor;
@@ -13,38 +13,38 @@ var Cor;
     Cor[Cor["Verde"] = 1] = "Verde";
     Cor[Cor["Vermelho"] = 2] = "Vermelho";
 })(Cor || (Cor = {}));
-var corAleatoria = Cor.Cinza;
+let corAleatoria = Cor.Cinza;
 console.log("corAleatoria", corAleatoria);
 function returnaNome() {
     return nome;
 }
 console.log(returnaNome());
-var multiplicar = function (a, b) {
+const multiplicar = (a, b) => {
     return a * b;
 };
 console.log(multiplicar(3, 3));
 //Tipo função
-var calculo;
+let calculo;
 calculo = multiplicar;
 console.log(calculo(8, 9));
 //objetos
-var usuario = {
+let usuario = {
     nome: "joão",
     idade: 21
 };
-var nota;
+let nota;
 nota = 10;
 console.log("nota", nota);
 nota = "10";
 console.log("nota", nota);
 //never
-var falha = function (msg) {
+const falha = (msg) => {
     throw new Error(msg);
 };
-var produto = {
+const produto = {
     nome: 'Sabão',
     preco: 2,
-    validarProduto: function () {
+    validarProduto() {
         if (!this.nome && this.nome.trim().length === 0) {
             falha('Precisa ter um nome');
         }
@@ -54,13 +54,13 @@ var produto = {
     }
 };
 produto.validarProduto();
-var contaBancaria = {
+let contaBancaria = {
     saldo: 3456,
-    depositar: function (valor) {
+    depositar(valor) {
         return this.saldo += valor;
     }
 };
-var correntista = {
+let correntista = {
     nome: 'Ana Silva',
     contaBancaria: contaBancaria,
     contatos: ['34567890', '98765432']

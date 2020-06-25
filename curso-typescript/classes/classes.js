@@ -82,3 +82,80 @@ class Ferrari extends Carro {
 const ferr = new Ferrari('F40', 350);
 console.log(ferr.acelerar());
 console.log(ferr.frear());
+//Get & set
+class Pessoa {
+    constructor() {
+        this._idade = 0;
+    }
+    get idade() {
+        return this._idade;
+    }
+    set idade(valor) {
+        if (valor >= 0 && valor <= 120)
+            this._idade = valor;
+    }
+}
+const pessoa1 = new Pessoa;
+pessoa1.idade = 20;
+console.log("pessoa1.idade", pessoa1.idade);
+//atributos e métodos estáticos
+// class Matematica {
+//     PI: number = 3.1416
+//     areaCirc(raio: number) : number {
+//         return this.PI * raio * raio;
+//     }
+// }
+// const m1 = new Matematica();
+// console.log("m1.areaCirc(3)", m1.areaCirc(3))
+class Matematica {
+    static areaCirc(raio) {
+        return this.PI * raio * raio;
+    }
+}
+Matematica.PI = 3.1416;
+console.log("Matematica.areaCirc(4) a", Matematica.areaCirc(4));
+//classe abstrata
+class Calculo {
+    constructor() {
+        this.resultado = 0;
+    }
+    getResultado() {
+        return this.resultado;
+    }
+}
+class Soma extends Calculo {
+    executar(...numeros) {
+        this.resultado = numeros.reduce((a, b) => a + b);
+    }
+}
+class Multiplicar extends Calculo {
+    executar(...numeros) {
+        this.resultado = numeros.reduce((a, b) => a * b);
+    }
+}
+let soma = new Soma();
+soma.executar(1, 2, 3, 4, 5);
+console.log(soma.getResultado());
+let multi = new Multiplicar();
+multi.executar(1, 2, 3, 4, 5);
+console.log(multi.getResultado());
+//singleton
+class Unico {
+    constructor() { }
+    static getInstance() {
+        return this.instance;
+    }
+    agora() {
+        return new Date;
+    }
+}
+Unico.instance = new Unico;
+console.log(Unico.getInstance().agora());
+//somente leitura
+class Aviao {
+    constructor(modelo, prefixo) {
+        this.prefixo = prefixo;
+        this.modelo = modelo;
+    }
+}
+const turboHelice = new Aviao('Turbo', 'Caça');

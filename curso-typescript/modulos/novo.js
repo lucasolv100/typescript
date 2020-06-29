@@ -1,6 +1,6 @@
 "use strict";
-module.exports = {
-    digaOi(nome) {
-        return "Oi " + nome;
-    }
-};
+// module.exports = {
+//     digaOi(nome: string) {
+//         return "Oi " + nome
+//     }
+// }

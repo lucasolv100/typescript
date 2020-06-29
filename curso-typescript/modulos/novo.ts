@@ -1,5 +1,5 @@
-module.exports = {
-    digaOi(nome: string) {
-        return "Oi " + nome
-    }
-}
+// module.exports = {
+//     digaOi(nome: string) {
+//         return "Oi " + nome
+//     }
+// }
